@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style=" display: flex; flex-direction: row; justify-content: center; ">Array methods</h1>
+    <h1 id="initial" style=" display: flex; flex-direction: row; justify-content: center; "></h1>
+    <div style=" display: flex; flex-direction: row; justify-content: center; ">
+        <select name="select operation" id="cal">
+            <option value=1> Sort in increasing order </option>
+            <option value=2> Sort in dcreasing order </option>
+            <option value=3> remove last element </option>
+            <option value=4> add element at last </option>
+            <option value=5> reverse </option>
+            <option value=6> slice array </option>
+            <option value=7> fill array with singe value </option>
+            <option value=8> remove first element </option>
+          </select>
+          <button onclick="myfunc()" style="margin-top: 10px;margin-bottom: 10px; margin-left: 10px;"> Submit </button>
+    </div>
+  
+        <h2 id="res" style=" display: flex; flex-direction: row; justify-content: center; color: black; "></h2>
+
+    
+    <script>
+        
+        var arr  = [4,6,8,3,2,5,1];
+        const arr1  = [4,6,8,3,2,5,1];
+        document.getElementById("initial").innerHTML = "initial Array :- " + arr1;
+
+        function myfunc()
+        {
+            // var x = document.getElementById("val1").value;
+            // var y = document.getElementById("val2").value;
+            
+
+            var z = document.getElementById("cal").value;
+         
+            switch(z) {
+            case "1":
+            arr = arr1;
+                    arr.sort();
+                    document.getElementById("res").innerHTML = "Array :- " + arr;
+                break;
+            case "2":
+            arr = arr1;
+                    arr.sort(function(a, b){return b-a});
+                    document.getElementById("res").innerHTML = "Array :- " + arr;
+                break;
+            case "3":
+            arr = arr1;
+                arr.pop();
+                document.getElementById("res").innerHTML = "Array :- " + arr;
+            break;
+            case "4":
+            arr = arr1;
+                var temp = prompt("Enter new element");
+                arr.push(temp);
+                document.getElementById("res").innerHTML = "Array :- " + arr;
+            break;
+            case "5":
+                arr = arr1;
+                arr.reverse();
+                document.getElementById("res").innerHTML = "Array :- " + arr;
+            break;
+            case "6":
+            arr = arr1;
+                var temp1 = prompt("Enter new first index");
+                var temp2 = prompt("Enter new second index");
+                const arrtemp = arr.slice(temp1,temp2);
+                document.getElementById("res").innerHTML = "Array :- " + arrtemp;
+            break;
+            case "7":
+            arr = arr1;
+                var temp = prompt("Enter new element");
+                arr.fill(temp);
+                document.getElementById("res").innerHTML = "Array :- " + arr;
+            break;
+            case "8":
+            arr = arr1;
+                arr.shift();
+                document.getElementById("res").innerHTML = "Array :- " + arr;
+            break;
+           
+            default:
+                break;
+            }
+            
+        }   
+
+
+    </script>
+</body>
+</html>
